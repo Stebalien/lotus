@@ -348,6 +348,7 @@ func (sm *SyncManager) scheduleProcessResult(res *syncResult) {
 			// fail, and we have more blocks on top of that chain that
 			// have come in since.  The question is, should we try to
 			// sync these? or just drop them?
+			// XXX: We should resolve this.
 		}
 	}
 

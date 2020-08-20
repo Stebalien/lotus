@@ -43,7 +43,7 @@ func (mpp *mpoolProvider) PutMessage(m types.ChainMsg) (cid.Cid, error) {
 }
 
 func (mpp *mpoolProvider) PubSubPublish(k string, v []byte) error {
-	return mpp.ps.Publish(k, v)
+	return mpp.ps.Publish(k, v) //nolint:deprecated
 }
 
 func (mpp *mpoolProvider) StateGetActor(addr address.Address, ts *types.TipSet) (*types.Actor, error) {
@@ -70,7 +70,7 @@ func (mpp *mpoolProvider) LoadTipSet(tsk types.TipSetKey) (*types.TipSet, error)
 func (mpp *mpoolProvider) ChainComputeBaseFee(ctx context.Context, ts *types.TipSet) (types.BigInt, error) {
 	baseFee, err := mpp.sm.ChainStore().ComputeBaseFee(ctx, ts)
 	if err != nil {
-		return types.NewInt(0), xerrors.Errorf("computing base fee at %s: %w", ts, err)
+		return types.NewInt(0), xerrors.Errorf("computing base fee at %d: %w", ts.Height(), err)
 	}
 	return baseFee, nil
 }

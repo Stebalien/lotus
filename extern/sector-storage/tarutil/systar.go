@@ -36,6 +36,7 @@ func ExtractTar(body io.Reader, dir string) error {
 			return xerrors.Errorf("creating file %s: %w", filepath.Join(dir, header.Name), err)
 		}
 
+		// XXX: Should we limit the amount of data we can write here?
 		if _, err := io.Copy(f, tr); err != nil {
 			return err
 		}

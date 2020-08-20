@@ -7,11 +7,12 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
-	"github.com/filecoin-project/specs-actors/actors/abi/big"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strconv"
+
+	"github.com/filecoin-project/specs-actors/actors/abi/big"
 
 	"github.com/docker/go-units"
 	"github.com/google/uuid"

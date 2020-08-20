@@ -20,6 +20,7 @@ import (
 	"github.com/filecoin-project/lotus/node/impl"
 )
 
+//nolint:unused
 var log = logging.Logger("apitest")
 
 func (ts *testSuite) testMining(t *testing.T) {
